@@ -15,7 +15,7 @@ const AppWrapper = styled.div`
     flex-direction:column;
     align-items:center;
     .app {
-      outline:2px solid red;
+      /* outline:2px solid red; */
       width:90%;
       position:relative;
       display:flex;

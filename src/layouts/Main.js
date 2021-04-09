@@ -1,8 +1,8 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Plan from "../pages/Plan";
+import Home from "../pages/Home/Home";
+import About from "../pages/About/About";
+import Plan from "../pages/Plan/Plan";
 
 function Main() {
     return (
