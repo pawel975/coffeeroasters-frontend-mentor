@@ -58,7 +58,7 @@ outline: 2px solid green;
             flex-direction:column;
             align-items:center;
             outline: 4px solid red;
-            h1{
+            h1.title{
             margin:0.2em;
             font-size:40px;
             font-weight:900;

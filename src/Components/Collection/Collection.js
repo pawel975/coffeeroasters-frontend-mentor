@@ -3,11 +3,12 @@ import {CollectionWrapper} from '../Collection/Collection-styling.js'
 
 const Collection = ({img,name,description})=> {
     return(
-        <>
-        <img src={img} alt=""/>
-        <h1>{name}</h1>
-        <p>{description}</p>
-        </>
+        <CollectionWrapper>
+            <img src={img} alt=""/>
+            <h1>{name}</h1>
+            <p>{description}</p>
+            <div>{name}</div>
+        </CollectionWrapper>
     )
 }
 

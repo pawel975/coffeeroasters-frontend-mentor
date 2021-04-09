@@ -30,7 +30,7 @@ function Home() {
         </div>
       </div>
       <div className="collection">
-          <h1>our collection</h1>
+          <h1 className="title">our collection</h1>
           {AllCoffees}
       </div>
     </HomeWrapper>
