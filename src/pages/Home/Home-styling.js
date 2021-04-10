@@ -26,7 +26,7 @@ export const HomeWrapper = styled.div`
             justify-content:space-between;
             
             h1{
-                margin:0 0 0em 0;
+                margin:0 0 0 0;
                 color: white;
                 font-family: 'Fraunces', serif;
                 font-weight:900;
@@ -68,9 +68,9 @@ export const HomeWrapper = styled.div`
         h1.title{
             position:relative;
             margin: 0 0 0.5em 0;
-            /* outline:2px solid red; */
-            padding:0.3em 0.6em;
-            font-size:40px;
+            outline:2px solid red;
+            padding:0.3em 0;
+            font-size:35px;
             font-weight:900;
             background: -webkit-linear-gradient(270deg,#979797,#F7F7F7);
             -webkit-background-clip: text;
