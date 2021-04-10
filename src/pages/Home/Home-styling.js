@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
@@ -53,7 +52,6 @@ export const HomeWrapper = styled.div`
                 width:217px;
                 height:56px;
                 border-radius:10px;
-
             }
         }
     }
@@ -68,7 +66,7 @@ export const HomeWrapper = styled.div`
         h1.title{
             position:relative;
             margin: 0 0 0.5em 0;
-            outline:2px solid red;
+            /* outline:2px solid red; */
             padding:0.3em 0;
             font-size:35px;
             font-weight:900;
@@ -80,10 +78,12 @@ export const HomeWrapper = styled.div`
     }
 
     .benefits {
+        margin-top:6em;
         /* outline:2px solid green; */
         width:100%;
-        height:1500px;
+        min-height:1500px;
         display:flex;
+        position:relative;
         flex-direction:column;
         align-items:center;
 
@@ -148,6 +148,37 @@ export const HomeWrapper = styled.div`
             bottom:0;
             /* outline:2px solid yellow; */
             height:auto;
+        }
+    }
+
+    .steps {
+        /* outline:2px solid red; */
+        width: 100%;
+        margin-top: 6em;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        h1.title {
+            width:100%;
+            text-align:center;
+            font-size:32px;
+            line-height:32px;
+            color: #83888F;
+            font-family: "Fraunces", serif;
+        }
+
+        button{
+            margin-top:1em;
+            border:none;
+            background-color: #0E8784;
+            color: #FEFCF7;
+            font-family: 'Fraunces', serif;
+            font-size:18px;
+            font-weight:900;
+            width:217px;
+            height:56px;
+            border-radius:10px;
         }
     }
 
