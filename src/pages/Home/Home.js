@@ -6,6 +6,10 @@ import GranEspresso from "../../assets/home/desktop/image-gran-espresso.png"
 import Planalto from "../../assets/home/desktop/image-planalto.png"
 import Piccollo from "../../assets/home/desktop/image-piccollo.png"
 import Danche from "../../assets/home/desktop/image-danche.png"
+import coffeeBean from '../../assets/home/desktop/icon-coffee-bean.svg';
+import gift from '../../assets/home/desktop/icon-gift.svg';
+import truck from '../../assets/home/desktop/icon-truck.svg';
+import Feature from '../../Components/Features/Feature';
 
 function Home() {
 
@@ -32,9 +36,30 @@ function Home() {
       },
   ]
 
+  const features = [
+    {
+      img: coffeeBean ,
+      name: "Best quality",
+      description: "Discover and endless variety of the world's best artisan coffee from each of out roasters."
+    },
+    {
+      img: gift ,
+      name: "Exclusive benefits",
+      description: "Special offers and swag when you subscribe, including 30% off your first shipment."
+    },
+    {
+      img: truck ,
+      name: "Free shipping",
+      description: "We cover the cost and coffee is delivered fast. Peak freshness: guaranteed."
+    }
+  ]
   const AllCoffees = coffee.map(option=> (
     <Collection img={option.img} name={option.name} description={option.description}/>
 
+  ))
+
+  const AllFeatures = features.map(feature => (
+    <Feature img={feature.img} name={feature.name} description={feature.description} />
   ))
 
   return (
@@ -57,6 +82,9 @@ function Home() {
               <h1>Why choose us?</h1>
               <p>A large part of our role is choosing which particular coffees will be featured in our range. This means working closely with the best coffee growers to give you a more impactful experience on every level</p>
             </section>
+          </section>
+          <section className="features">
+              {AllFeatures}
           </section>
       </div>
     </HomeWrapper>

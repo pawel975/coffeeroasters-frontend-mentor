@@ -80,7 +80,7 @@ export const HomeWrapper = styled.div`
     }
 
     .benefits {
-        outline:2px solid green;
+        /* outline:2px solid green; */
         width:100%;
         height:1500px;
         display:flex;
@@ -104,9 +104,8 @@ export const HomeWrapper = styled.div`
                 width:100%;
                 bottom:0;
             }
-        }
 
-        .text {
+            .text {
             height:177px;
             margin:auto;
             margin-top:4em;
@@ -118,15 +117,15 @@ export const HomeWrapper = styled.div`
             width:85%;
             text-align:center;
 
-            h1{
+                h1{
                 font-size:28px;
                 font-family: "Fraunces", serif;
                 margin:0;
                 color:#FEFCF7;
                 /* outline:2px solid yellow; */
-            }
+                }
 
-            p{
+                p{
                 font-size:15px;
                 font-family: "Barlow", serif;
                 margin:0;
@@ -135,9 +134,20 @@ export const HomeWrapper = styled.div`
                 font-weight:100;
                 opacity:0.7;
                 /* outline: 2px solid purple; */
+                }
+
             }
+        }
 
-
+        .features {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            width:100%;
+            position:absolute;
+            bottom:0;
+            /* outline:2px solid yellow; */
+            height:auto;
         }
     }
 
