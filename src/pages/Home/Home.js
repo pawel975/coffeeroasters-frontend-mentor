@@ -18,17 +18,17 @@ function Home() {
       {
         img: Planalto,
         name: "Planalto",
-        description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
+        description: 'Brazilian dark roast with rich and velvety body, and hints of fruits and nuts'
       },
       {
         img: Piccollo,
         name: "Piccollo",
-        description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
+        description: 'Mild and smooth blend featuring notes of toasted almond and dried cherry'
       },
       {
         img: Danche,
         name: "Danche",
-        description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
+        description: 'Ethiopian hand-harvested blend densely packed with vibrant fruit notes'
       },
   ]
 
@@ -50,6 +50,14 @@ function Home() {
       <div className="collection">
           <h1 className="title">our collection</h1>
           {AllCoffees}
+      </div>
+      <div className="benefits">
+          <section className="intro">
+            <section className="text">
+              <h1>Why choose us?</h1>
+              <p>A large part of our role is choosing which particular coffees will be featured in our range. This means working closely with the best coffee growers to give you a more impactful experience on every level</p>
+            </section>
+          </section>
       </div>
     </HomeWrapper>
   );

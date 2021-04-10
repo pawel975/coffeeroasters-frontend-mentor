@@ -55,29 +55,90 @@ export const HomeWrapper = styled.div`
                 border-radius:10px;
 
             }
+        }
+    }
+    .collection {
+        margin: 6em 0 0 0;
+        width: 100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        /* outline: 4px solid red; */
+
+        h1.title{
+            position:relative;
+            margin: 0 0 0.5em 0;
+            /* outline:2px solid red; */
+            padding:0.3em 0.6em;
+            font-size:40px;
+            font-weight:900;
+            background: -webkit-linear-gradient(270deg,#979797,#F7F7F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Fraunces', serif;
+        }
+    }
+
+    .benefits {
+        outline:2px solid green;
+        width:100%;
+        height:1500px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        .intro {
+            border-radius:10px;
+            position:relative;
+            width:100%;
+            height:900px;
+            background: #2C343E;
+            overflow:hidden;
+
+            &:after{
+                content: "";
+                position:absolute;
+                background: #000;
+                opacity:0.2;
+                height:70%;
+                width:100%;
+                bottom:0;
             }
         }
-        .collection {
-            margin: 6em 0 0 0;
-            width: 100%;
+
+        .text {
+            height:177px;
+            margin:auto;
+            margin-top:4em;
+            /* outline:2px solid red; */
             display:flex;
             flex-direction:column;
-            align-items:center;
-            /* outline: 4px solid red; */
+            justify-content:space-between;
+            min-width:50px;
+            width:85%;
+            text-align:center;
 
-            h1.title{
-                position:relative;
-                margin: 0 0 0.5em 0;
-                /* outline:2px solid red; */
-                padding:0.3em 0.6em;
-                font-size:40px;
-                font-weight:900;
-                background: -webkit-linear-gradient(270deg,#979797,#F7F7F7);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                font-family: 'Fraunces', serif;
+            h1{
+                font-size:28px;
+                font-family: "Fraunces", serif;
+                margin:0;
+                color:#FEFCF7;
+                /* outline:2px solid yellow; */
             }
-            
+
+            p{
+                font-size:15px;
+                font-family: "Barlow", serif;
+                margin:0;
+                line-height:25px;
+                color:#FEFCF7;
+                font-weight:100;
+                opacity:0.7;
+                /* outline: 2px solid purple; */
+            }
+
+
         }
+    }
 
 `
