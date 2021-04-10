@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
-width:100%;
-outline: 2px solid green;
+    width:100%;
+    /* outline: 2px solid green; */
     .introduction {
         position:relative;
         width:100%;
+
         .background {
             width:100%;
             border-radius:10px;
             }
+
         .description {
             width:80%;
             text-align:center;
@@ -22,13 +24,15 @@ outline: 2px solid green;
             flex-direction:column;
             align-items:center;
             justify-content:space-between;
+            
             h1{
                 margin:0 0 0em 0;
                 color: white;
                 font-family: 'Fraunces', serif;
-                font-weight:800;
+                font-weight:900;
                 font-size:40px;
             }
+            
             p{
                 font-family: 'Barlow', sans-serif;
                 color: white;
@@ -38,13 +42,14 @@ outline: 2px solid green;
                 font-size:15px;
                 line-height:1.4em;
             }
+
             button{
                 border:none;
                 background-color: #0E8784;
                 color: #FEFCF7;
                 font-family: 'Fraunces', serif;
                 font-size:18px;
-                font-weight:700;
+                font-weight:900;
                 width:217px;
                 height:56px;
                 border-radius:10px;
@@ -53,18 +58,24 @@ outline: 2px solid green;
             }
         }
         .collection {
+            margin: 6em 0 0 0;
             width: 100%;
             display:flex;
             flex-direction:column;
             align-items:center;
-            outline: 4px solid red;
+            /* outline: 4px solid red; */
+
             h1.title{
-            margin:0.2em;
-            font-size:40px;
-            font-weight:900;
-            color:grey;
-            opacity:0.8;
-            font-family: 'Fraunces', serif;
+                position:relative;
+                margin: 0 0 0.5em 0;
+                /* outline:2px solid red; */
+                padding:0.3em 0.6em;
+                font-size:40px;
+                font-weight:900;
+                background: -webkit-linear-gradient(270deg,#979797,#F7F7F7);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: 'Fraunces', serif;
             }
             
         }

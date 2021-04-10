@@ -3,6 +3,9 @@ import CoffeePicture from '../../assets/home/mobile/image-hero-coffeepress.jpg';
 import {HomeWrapper} from './Home-styling.js'
 import Collection from '../../Components/Collection/Collection';
 import GranEspresso from "../../assets/home/desktop/image-gran-espresso.png"
+import Planalto from "../../assets/home/desktop/image-planalto.png"
+import Piccollo from "../../assets/home/desktop/image-piccollo.png"
+import Danche from "../../assets/home/desktop/image-danche.png"
 
 function Home() {
 
@@ -10,6 +13,21 @@ function Home() {
       {
         img: GranEspresso,
         name: "Gran Espresso",
+        description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
+      },
+      {
+        img: Planalto,
+        name: "Planalto",
+        description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
+      },
+      {
+        img: Piccollo,
+        name: "Piccollo",
+        description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
+      },
+      {
+        img: Danche,
+        name: "Danche",
         description: 'Light and flavorful blend with cocoa and black pepper for an intense experience'
       },
   ]

@@ -5,9 +5,12 @@ const Collection = ({img,name,description})=> {
     return(
         <CollectionWrapper>
             <img src={img} alt=""/>
-            <h1>{name}</h1>
-            <p>{description}</p>
-            <div>{name}</div>
+            <div className="description">
+                <h1 style={
+                    name === "Danche"? {textShadow:"0px 3px 5px #939393"}:null}
+                    >{name}</h1>
+                <p>{description}</p>
+            </div>
         </CollectionWrapper>
     )
 }

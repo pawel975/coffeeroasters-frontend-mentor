@@ -1,22 +1,39 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const CollectionWrapper = styled.div`
-    width:100%;
-    img{
-        width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+width:100%;
+margin:1em 0;
+img{
+    width:50%;
+}
+.description {
+    /* outline:2px solid blue; */
+    width:80%;
+    height:90px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+}   h1 {
+    margin:0;
+    /* outline:2px solid red; */
+    font-size: 24px;
+    font-family: 'Fraunces', serif;
+    font-weight:bold;
+    color: #333D4B;
+    height:32px;
     }
-    h1 {
-        font-size: 24px;
-        font-family: 'Fraunces', serif;
-        font-weight:bold;
-        color: #333D4B;
-    }
-    div {
-        font-size: 24px;
-        font-family: 'Fraunces', serif;
-        font-weight:900;
-        color: #333D4B;
-    }
+    p{
+        margin:0;
+        line-height:1.5em;
+        /* outline:2px solid green; */
+        font-family: 'Barlow', sans-serif;
+        text-align:center;
+        color:#333D4B;
+        font-size:15px;
+    }   
 
 `
