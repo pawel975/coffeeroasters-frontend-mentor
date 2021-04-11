@@ -4,6 +4,7 @@ import Main from '../layouts/Main';
 import Footer from '../layouts/Footer';
 import {BrowserRouter as Router} from 'react-router-dom';
 import styled from "styled-components";
+import ScrollToTop from './ScrollToTop';
 
 
 const AppWrapper = styled.div`
@@ -27,6 +28,7 @@ const AppWrapper = styled.div`
 function App() {
   return (
       <Router>
+        <ScrollToTop/>
         <AppWrapper>
           <div className="app">
             <Nav/>
