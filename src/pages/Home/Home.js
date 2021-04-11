@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import CoffeePicture from '../../assets/home/mobile/image-hero-coffeepress.jpg';
 import {HomeWrapper} from './Home-styling.js'
 import Collection from '../../Components/Collection/Collection';
@@ -35,7 +35,7 @@ function Home() {
         name: "Danche",
         description: 'Ethiopian hand-harvested blend densely packed with vibrant fruit notes'
       },
-  ]
+  ];
 
   const features = [
     {
@@ -119,5 +119,6 @@ function Home() {
     </HomeWrapper>
   );
 }
+
 
 export default Home;

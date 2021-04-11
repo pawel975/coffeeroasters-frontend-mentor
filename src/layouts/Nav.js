@@ -5,12 +5,18 @@ import hamburger from '../assets/shared/mobile/icon-hamburger.svg';
 import styled from 'styled-components';
 
 const NavWrapper = styled.nav`
-    height: 100px;
+    height: 18px;
+    padding:2em 0;
     width:100%;
     /* outline:2px solid black; */
     display:flex;
     align-items:center;
     justify-content: space-between;
+
+    img {
+      height:18px;
+    }
+
     .nav-desktop {
       display:flex;
       ul{

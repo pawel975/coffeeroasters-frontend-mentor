@@ -27,7 +27,7 @@ export const FeatureWrapper = styled.div`
         h1 {
             text-align:center;
             margin:0.3em 0;
-            outline:2px solid red;
+            /* outline:2px solid red; */
             font-size: 24px;
             font-family: 'Fraunces', serif;
             font-weight:bold;
