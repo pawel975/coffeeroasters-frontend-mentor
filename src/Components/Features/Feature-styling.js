@@ -18,29 +18,30 @@ export const FeatureWrapper = styled.div`
     .description {
         /* outline: 2px solid red; */
         width:80%;
-        height:131px;
+        min-height:131px;
         display:flex;
         flex-direction:column;
         align-items:center;
         justify-content:space-between;
 
         h1 {
-        margin:0;
-        /* outline:2px solid red; */
-        font-size: 24px;
-        font-family: 'Fraunces', serif;
-        font-weight:bold;
-        color: #FEFCF7;
-        height:32px;
+            text-align:center;
+            margin:0.3em 0;
+            outline:2px solid red;
+            font-size: 24px;
+            font-family: 'Fraunces', serif;
+            font-weight:bold;
+            color: #FEFCF7;
+            min-height:32px;
         }
         p{
-        margin:0;
-        line-height:25px;
-        /* outline:2px solid green; */
-        font-family: 'Barlow', sans-serif;
-        text-align:center;
-        color:#FEFCF7;
-        font-size:15px;
+            margin:0;
+            line-height:25px;
+            /* outline:2px solid green; */
+            font-family: 'Barlow', sans-serif;
+            text-align:center;
+            color:#FEFCF7;
+            font-size:15px;
         }   
     }
 
