@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import bgSteps from '../../assets/plan/mobile/bg-steps.png';
 
 export const PlanWrapper = styled.div`
     width:100%;
@@ -43,5 +44,26 @@ export const PlanWrapper = styled.div`
         }
 
     }
+
 }
+    .steps {
+        * p,h2{
+            color:#FFFFFF;
+        }
+
+        * p {
+            opacity:0.8;
+        }
+        border-radius:7px;
+        background-image: url(${bgSteps}) ;
+        min-height:1028px;
+        /* outline:2px solid red; */
+        width: 100%;
+        margin-top: 6em;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        
+    }
+
 `

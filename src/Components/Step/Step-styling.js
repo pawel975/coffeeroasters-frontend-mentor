@@ -19,6 +19,7 @@ h1{
     line-height:72px;
 }
 .description {
+    width:85%;
     padding:2px;
     min-height:156px;
     display:flex;
@@ -27,7 +28,8 @@ h1{
     justify-content:space-between;
     /* outline:2px solid purple; */
     h2 {
-        margin:0;
+        margin:0.5em 0;
+        text-align:center;
         /* outline:2px solid red; */
         font-size: 28px;
         font-family: 'Fraunces', serif;
