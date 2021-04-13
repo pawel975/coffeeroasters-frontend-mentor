@@ -66,4 +66,6 @@ export const PlanWrapper = styled.div`
         
     }
 
+    
+
 `

@@ -128,19 +128,19 @@ function Plan() {
   
   
   const [state, setState] = useState({
-    howYourDrink: 1,
-    typeOfCoffee:1,
-    howMuch: 0,
-    grinded: 2,
-    deliver:1,
+    howYourDrink: "",
+    typeOfCoffee:"",
+    howMuch: "",
+    grinded: "",
+    deliver:"",
   })
 
   const orderSummary = [
-    aspects[0].options[state.howYourDrink].name,
-    aspects[1].options[state.typeOfCoffee].name,
-    aspects[2].options[state.howMuch].name,
-    aspects[3].options[state.grinded].name,
-    aspects[4].options[state.deliver].name
+    state.howYourDrink !== "" ? aspects[0].options[state.howYourDrink].name : null,
+    state.typeOfCoffee !== "" ? aspects[1].options[state.typeOfCoffee].name : null,
+    state.howMuch !== "" ? aspects[2].options[state.howMuch].name : null,
+    state.grinded !== "" ? aspects[3].options[state.grinded].name : null,
+    state.deliver !== "" ? aspects[4].options[state.deliver].name : null
   ]
 
   const handleClickOption = (e) => {
@@ -181,7 +181,6 @@ function Plan() {
       default:
         break;
     }
-      // console.log(e.target.value, e.target.parentNode.parentNode.id)
   }
 
   const AllSteps = steps.map(step => (
@@ -207,7 +206,8 @@ function Plan() {
           {AllSteps}
       </div>
       {AllAspects}
-      <p>{`I drink my coffee as ${orderSummary[0]}, with a ${orderSummary[1]} type of bean. ${orderSummary[2]} ground ala ${orderSummary[3]}, sent to me ${orderSummary[4]}.`}</p>
+      {!orderSummary.includes(null) && <p>{`I drink my coffee as ${orderSummary[0]}, with a ${orderSummary[1]} type of bean. ${orderSummary[2]} ground ala ${orderSummary[3]}, sent to me ${orderSummary[4]}.`}</p>
+}
     </PlanWrapper>
   );
 }
