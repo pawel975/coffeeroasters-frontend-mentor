@@ -24,36 +24,41 @@ const DropdownWrapper = styled.div`
             width:100%;
             background-color:yellow;
         }
+
+        h1, p {
+            pointer-events:none
+        }
     }
 `
 
-const Dropdown2 = () => {
+const Dropdown = ({id,aspect,click}) => {
 
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(!open)
+        console.log(aspect.question)
     }
 
     return(
-        <DropdownWrapper>
+        <DropdownWrapper id={id}>
              <div className="select">
-                <h3>How do your drink your coffee</h3>
+                <h3>{aspect.question}</h3>
                 <button onClick={handleClickOpen}>Open</button>
             </div>
             {open && (
                 <ul className="options">
-                    <li>
-                        <h1>Capsule</h1>
-                        <p>Compatible with Nespresso systems and similar brewers</p>
+                    <li onClick={click} value={0}>
+                        <h1>{aspect.options[0].name}</h1>
+                        <p>{aspect.options[0].text}</p>
                     </li>
-                    <li>
-                        <h1>Filter</h1>
-                        <p>For pour over or drip methods like Aeropress, Chemex, and V60</p>
+                    <li onClick={click} value={1}>
+                        <h1>{aspect.options[1].name}</h1>
+                        <p>{aspect.options[1].text}</p>
                     </li>
-                    <li>
-                        <h1>Espresso</h1>
-                        <p>Dense and finely ground beans for an intense, flavorful experience</p>
+                    <li onClick={click} value={2}>
+                        <h1>{aspect.options[2].name}</h1>
+                        <p>{aspect.options[2].text}</p>
                     </li>
                 </ul>
             )}
@@ -61,4 +66,4 @@ const Dropdown2 = () => {
     )
 }
 
-export default Dropdown2;
+export default Dropdown;
