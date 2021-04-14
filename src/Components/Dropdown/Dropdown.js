@@ -96,7 +96,7 @@ const DropdownWrapper = styled.div`
 
 const Dropdown = ({state,id,aspect,click}) => {
 
-    const {howYouDrink,typeOfCoffee,howMuch,grinded,deliver}
+    const {howYouDrink,typeOfCoffee,howMuch,grinded,deliver} = state;
 
     const [open, setOpen] = useState(false);
 
