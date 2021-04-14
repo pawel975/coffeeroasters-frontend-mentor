@@ -128,7 +128,7 @@ function Plan() {
   
   
   const [state, setState] = useState({
-    howYourDrink: "",
+    howYouDrink: "",
     typeOfCoffee:"",
     howMuch: "",
     grinded: "",
@@ -136,7 +136,7 @@ function Plan() {
   })
 
   const orderSummary = [
-    state.howYourDrink !== "" ? aspects[0].options[state.howYourDrink].name : null,
+    state.howYouDrink !== "" ? aspects[0].options[state.howYouDrink].name : null,
     state.typeOfCoffee !== "" ? aspects[1].options[state.typeOfCoffee].name : null,
     state.howMuch !== "" ? aspects[2].options[state.howMuch].name : null,
     state.grinded !== "" ? aspects[3].options[state.grinded].name : null,
@@ -150,9 +150,9 @@ function Plan() {
       case 0:
         setState({
           ...state,
-          howYourDrink: option
+          howYouDrink: option
         })
-        console.log(state.howYourDrink)
+        console.log(state.howYouDrink)
         break;
       case 1:
         setState({
@@ -182,13 +182,14 @@ function Plan() {
         break;
     }
   }
+  
 
   const AllSteps = steps.map(step => (
     <Step number={step.number} name={step.name} description={step.description}/>
   ))
 
   const AllAspects = aspects.map(aspect => (
-    <Dropdown id={aspect.id} aspect={aspect} click={handleClickOption} />
+    <Dropdown state={state} id={aspect.id} aspect={aspect} click={handleClickOption} />
   ))
 
   return (

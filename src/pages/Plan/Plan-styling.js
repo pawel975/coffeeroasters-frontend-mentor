@@ -7,6 +7,7 @@ export const PlanWrapper = styled.div`
 .introduction {
     width:100%;
     position:relative;
+    background-color:#F2F2F2;
 
     .background {
         width:100%;
@@ -59,6 +60,7 @@ export const PlanWrapper = styled.div`
         min-height:1028px;
         /* outline:2px solid red; */
         width: 100%;
+        margin-bottom:6em;
         margin-top: 6em;
         display:flex;
         flex-direction:column;
