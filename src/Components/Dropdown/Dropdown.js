@@ -92,17 +92,28 @@ const DropdownWrapper = styled.div`
             pointer-events:none
         }
     }
+
+    .option-active {
+        background-color:green !important; 
+    }
 `
 
-const Dropdown = ({state,id,aspect,click}) => {
+const Dropdown = ({id,aspect,click}) => {
 
-    const {howYouDrink,typeOfCoffee,howMuch,grinded,deliver} = state;
+
 
     const [open, setOpen] = useState(false);
+
+    const style={
+        backgroundColor: "#0E8784",
+        color: "white"
+    }
 
     const handleClickOpen = () => {
         setOpen(!open)
     }
+
+    // const [colorActive, setColorActive] = useState(null)
 
     return(
         <DropdownWrapper id={id}>
@@ -115,7 +126,7 @@ const Dropdown = ({state,id,aspect,click}) => {
             </div>
             {open && (
                 <ul className="options">
-                    <li onClick={click} value={0}>
+                    <li onClick={click} value={0} >
                         <h1>{aspect.options[0].name}</h1>
                         <p>{aspect.options[0].text}</p>
                     </li>

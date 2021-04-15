@@ -143,9 +143,15 @@ function Plan() {
     state.deliver !== "" ? aspects[4].options[state.deliver].name : null
   ]
 
+  
+
   const handleClickOption = (e) => {
     const option = Number(e.target.value)
     const aspect = Number(e.target.parentNode.parentNode.id)
+    const textCheck = e.target.childNodes[0]
+    textCheck.textContent ==="Filter" ? textCheck.style.color = "blue" : textCheck.style.color = "#333D4B"
+    console.log(option, aspect)
+    console.log(textCheck)
     switch (aspect) {
       case 0:
         setState({
