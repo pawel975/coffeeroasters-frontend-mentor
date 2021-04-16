@@ -94,7 +94,7 @@ const DropdownWrapper = styled.div`
     }
 `
 
-    const Dropdown = ({state, setState, id,aspect,click}) => {
+    const Dropdown = ({state, setState, id,aspect}) => {
 
     const [open, setOpen] = useState(false);
 

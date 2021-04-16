@@ -166,8 +166,15 @@ function Plan() {
           {AllSteps}
       </div>
       {AllAspects}
-      {!orderSummary.includes(null) && <p>{`I drink my coffee as ${orderSummary[0]}, with a ${orderSummary[1]} type of bean. ${orderSummary[2]} ground ala ${orderSummary[3]}, sent to me ${orderSummary[4]}.`}</p>
-}
+
+      {/* tutaj trzeba odwrócić !orderSummary */}
+      {!orderSummary.includes(null) && <p>{`I drink my coffee as ${orderSummary[0]}, with a ${orderSummary[1]} type of bean. ${orderSummary[2]} ground ala ${orderSummary[3]}, sent to me ${orderSummary[4]}.`}</p>}
+
+      <section className="summary">
+        {orderSummary.includes(null) && 
+        <p>{`I drink my coffee as ${<h1>{orderSummary[0]}</h1>}, with a ${<span>{orderSummary[1]}</span>} type of bean. ${<span>{orderSummary[2]}</span>} ground ala ${<span>{orderSummary[3]}</span>}, sent to me ${<span>{orderSummary[4]}</span>}.`}</p>}
+      </section>
+      <button onClick={()=> console.log(orderSummary)}>XD</button>
     </PlanWrapper>
   );
 }
