@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import styled, { keyframes } from 'styled-components';
 import {RiArrowDropDownLine} from 'react-icons/ri'
 
@@ -54,7 +54,7 @@ const DropdownWrapper = styled.div`
         margin:0;
         padding:0;
         margin-top:1em;
-        margin-bottom:7em;
+        margin-bottom:2em;
         width:100%;
         background-color: transparent;
         display:flex;
@@ -92,28 +92,73 @@ const DropdownWrapper = styled.div`
             pointer-events:none
         }
     }
-
-    .option-active {
-        background-color:green !important; 
-    }
 `
 
-const Dropdown = ({id,aspect,click}) => {
-
-
+    const Dropdown = ({state, setState, id,aspect,click}) => {
 
     const [open, setOpen] = useState(false);
 
-    const style={
-        backgroundColor: "#0E8784",
-        color: "white"
-    }
+    const initialStyling = useRef()
 
     const handleClickOpen = () => {
         setOpen(!open)
     }
 
-    // const [colorActive, setColorActive] = useState(null)
+    const handleTest = ()=> {
+        const LiList = initialStyling.current.childNodes;
+        const LiArray = Array(...LiList)
+        LiArray.map(li => {
+            return(
+                li.style.color = "#333D4B",
+                li.style.backgroundColor = "#F4F1EB"
+            )
+        })
+    }
+
+
+    const handleClickOption = (e) => {
+        handleTest()
+        const optionLi = e.target
+        const option = Number(e.target.value)
+        const aspect = Number(e.target.parentNode.parentNode.id)
+        optionLi.style.color ="white";
+        optionLi.style.backgroundColor ="#0E8784";
+    
+        switch (aspect) {
+          case 0:
+            setState({
+              ...state,
+              howYouDrink: option
+            })
+            break;
+          case 1:
+            setState({
+              ...state,
+              typeOfCoffee: option
+            })
+            break;
+          case 2:
+            setState({
+              ...state,
+              howMuch: option
+            })
+            break;
+          case 3:
+          setState({
+            ...state,
+            grinded: option
+          })
+          break;
+          case 4:
+          setState({
+            ...state,
+            deliver: option
+          })
+          break;
+          default:
+            break;
+        }
+      }
 
     return(
         <DropdownWrapper id={id}>
@@ -125,16 +170,16 @@ const Dropdown = ({id,aspect,click}) => {
                 </RiArrowDropDownLine>
             </div>
             {open && (
-                <ul className="options">
-                    <li onClick={click} value={0} >
-                        <h1>{aspect.options[0].name}</h1>
+                <ul ref={initialStyling} className="options">
+                    <li onClick={handleClickOption} value={0} >
+                        <h1>{aspect.options[0].name }</h1>
                         <p>{aspect.options[0].text}</p>
                     </li>
-                    <li onClick={click} value={1}>
+                    <li onClick={handleClickOption} value={1}>
                         <h1>{aspect.options[1].name}</h1>
                         <p>{aspect.options[1].text}</p>
                     </li>
-                    <li onClick={click} value={2}>
+                    <li onClick={handleClickOption} value={2}>
                         <h1>{aspect.options[2].name}</h1>
                         <p>{aspect.options[2].text}</p>
                     </li>

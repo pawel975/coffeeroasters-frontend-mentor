@@ -143,59 +143,12 @@ function Plan() {
     state.deliver !== "" ? aspects[4].options[state.deliver].name : null
   ]
 
-  
-
-  const handleClickOption = (e) => {
-    const option = Number(e.target.value)
-    const aspect = Number(e.target.parentNode.parentNode.id)
-    const textCheck = e.target.childNodes[0]
-    textCheck.textContent ==="Filter" ? textCheck.style.color = "blue" : textCheck.style.color = "#333D4B"
-    console.log(option, aspect)
-    console.log(textCheck)
-    switch (aspect) {
-      case 0:
-        setState({
-          ...state,
-          howYouDrink: option
-        })
-        console.log(state.howYouDrink)
-        break;
-      case 1:
-        setState({
-          ...state,
-          typeOfCoffee: option
-        })
-        break;
-      case 2:
-        setState({
-          ...state,
-          howMuch: option
-        })
-        break;
-      case 3:
-      setState({
-        ...state,
-        grinded: option
-      })
-      break;
-      case 4:
-      setState({
-        ...state,
-        deliver: option
-      })
-      break;
-      default:
-        break;
-    }
-  }
-  
-
   const AllSteps = steps.map(step => (
     <Step number={step.number} name={step.name} description={step.description}/>
   ))
 
   const AllAspects = aspects.map(aspect => (
-    <Dropdown state={state} id={aspect.id} aspect={aspect} click={handleClickOption} />
+    <Dropdown state={state} setState={setState} id={aspect.id} aspect={aspect}/>
   ))
 
   return (
