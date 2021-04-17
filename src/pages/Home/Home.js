@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import CoffeePicture from '../../assets/home/mobile/image-hero-coffeepress.jpg';
 import {HomeWrapper} from './Home-styling.js'
 import Collection from '../../Components/Collection/Collection';
@@ -11,10 +11,12 @@ import gift from '../../assets/home/desktop/icon-gift.svg';
 import truck from '../../assets/home/desktop/icon-truck.svg';
 import Feature from '../../Components/Features/Feature';
 import Step from '../../Components/Step/Step';
+import {Link} from 'react-router-dom';
+import { CoffeeContext } from '../../Components/CoffeeRoasterContext';
 
 function Home() {
 
-  const coffee = [
+    const coffee = [
       {
         img: GranEspresso,
         name: "Gran Espresso",
@@ -73,6 +75,18 @@ function Home() {
     },
   ]
 
+  const [state, setState] = useContext(CoffeeContext)
+
+  useEffect(() => (
+    setState({
+      howYouDrink: "",
+      typeOfCoffee:"",
+      howMuch: "",
+      grinded: "",
+      deliver:"",
+    })
+  ), [])
+
   const AllCoffees = coffee.map(option=> (
     <Collection img={option.img} name={option.name} description={option.description}/>
 
@@ -93,7 +107,9 @@ function Home() {
         <div className="description">
           <h1>Great coffee made simple.</h1>
           <p>Start your mornings with the world's best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
-          <button>Create your plan</button>
+          <Link to="/plan">
+            <button>Create your plan</button>
+          </Link>
         </div>
       </div>
       <div className="collection">
@@ -114,7 +130,9 @@ function Home() {
       <div className="steps">
           <h1 className="title">How it works</h1>
           {AllSteps}
-          <button>Create your plan</button>
+          <Link to="/plan">
+            <button>Create your plan</button>
+          </Link>
       </div>
     </HomeWrapper>
   );

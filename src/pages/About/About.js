@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import { AboutWrapper } from './About-styling';
 import ImageHeroWhitecup from '../../assets/about/mobile/image-hero-whitecup.jpg'
 import ImageCommitment from '../../assets/about/mobile/image-commitment.jpg'
@@ -6,8 +6,8 @@ import Quality from '../../assets/about/mobile/image-quality.jpg'
 import UnitedKingdom from '../../assets/about/desktop/illustration-uk.svg';
 import Canada from '../../assets/about/desktop/illustration-canada.svg';
 import Australia from '../../assets/about/desktop/illustration-australia.svg';
-import { QuarterWrapper } from '../../Components/Quarter/Quarter-styling';
 import Quarter from '../../Components/Quarter/Quarter';
+import { CoffeeContext } from '../../Components/CoffeeRoasterContext';
 
 const quarters = [
   {
@@ -41,6 +41,20 @@ const AllQuarters = quarters.map(quarter => (
 ))
 
 function About() {
+
+  
+  const [state, setState] = useContext(CoffeeContext);
+
+  useEffect(() => (
+    setState({
+      howYouDrink: "",
+      typeOfCoffee:"",
+      howMuch: "",
+      grinded: "",
+      deliver:"",
+    })
+  ), [])
+
   return (
     <AboutWrapper>
       <div className="introduction">

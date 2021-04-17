@@ -60,7 +60,6 @@ const DropdownWrapper = styled.div`
         display:flex;
         flex-direction:column;
         justify-content:space-around;
-        /* outline: 2px solid green; */
 
         li {
             margin:auto;
@@ -92,6 +91,10 @@ const DropdownWrapper = styled.div`
             pointer-events:none
         }
     }
+
+    .closed {
+            display:none !important;
+    }
 `
 
     const Dropdown = ({state, setState, id,aspect}) => {
@@ -104,7 +107,7 @@ const DropdownWrapper = styled.div`
         setOpen(!open)
     }
 
-    const handleTest = ()=> {
+    const colorReset = ()=> {
         const LiList = initialStyling.current.childNodes;
         const LiArray = Array(...LiList)
         LiArray.map(li => {
@@ -115,9 +118,8 @@ const DropdownWrapper = styled.div`
         })
     }
 
-
     const handleClickOption = (e) => {
-        handleTest()
+        colorReset()
         const optionLi = e.target
         const option = Number(e.target.value)
         const aspect = Number(e.target.parentNode.parentNode.id)
@@ -169,8 +171,7 @@ const DropdownWrapper = styled.div`
                     size="60px" onClick={handleClickOpen}>Open
                 </RiArrowDropDownLine>
             </div>
-            {open && (
-                <ul ref={initialStyling} className="options">
+                <ul ref={initialStyling} className={`options ${open ? "":"closed"} `}>
                     <li onClick={handleClickOption} value={0} >
                         <h1>{aspect.options[0].name }</h1>
                         <p>{aspect.options[0].text}</p>
@@ -184,7 +185,6 @@ const DropdownWrapper = styled.div`
                         <p>{aspect.options[2].text}</p>
                     </li>
                 </ul>
-            )}
         </DropdownWrapper>
     )
 }

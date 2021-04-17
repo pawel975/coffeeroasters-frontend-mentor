@@ -5,6 +5,7 @@ import Footer from '../layouts/Footer';
 import {BrowserRouter as Router} from 'react-router-dom';
 import styled from "styled-components";
 import ScrollToTop from './ScrollToTop';
+import {CoffeeProvider} from '../Components/CoffeeRoasterContext'
 
 
 const AppWrapper = styled.div`
@@ -29,15 +30,16 @@ function App() {
   return (
       <Router>
         <ScrollToTop/>
-        <AppWrapper>
-          <div className="app">
-            <Nav/>
-            <Main/>
-            <Footer/>
-          </div>
-        </AppWrapper>
+          <AppWrapper>
+            <CoffeeProvider>
+              <div className="app">
+                <Nav/>
+                <Main/>
+                <Footer/>
+              </div>
+            </CoffeeProvider>
+          </AppWrapper>
       </Router>
-
   );
 }
 

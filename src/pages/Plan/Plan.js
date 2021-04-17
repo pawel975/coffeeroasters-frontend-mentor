@@ -1,16 +1,10 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import { PlanWrapper } from './Plan-styling';
 import BlackCup from '../../assets/plan/mobile/image-hero-blackcup.jpg';
 import Step from '../../Components/Step/Step';
 import Dropdown from '../../Components/Dropdown/Dropdown';
-
-//utworzyć tablice z napisami
-//mapem stworzyć komponentny z napisami (przekazać też onClick)
-//opcje w komponencie zrobić w li z value
-//po kliknięciu w komponent przekaże który jest zmieniany
-//po kliknięciu przekaże które li jest wybrany (po value)
-//kliknięcie zmieni state w wybranej opcji (wspólny state dla każdej komórki, różne nazwy tych komórek w state - domyślnie puste)
-
+import { CoffeeContext } from '../../Components/CoffeeRoasterContext';
+import {Link} from 'react-router-dom';
 
 const steps = [
   {
@@ -127,18 +121,13 @@ const aspects = [
 function Plan() {
   
   
-  const [state, setState] = useState({
-    howYouDrink: "",
-    typeOfCoffee:"",
-    howMuch: "",
-    grinded: "",
-    deliver:"",
-  })
+  const [state, setState] = useContext(CoffeeContext)
+
 
   const orderSummary = [
     state.howYouDrink !== "" ? aspects[0].options[state.howYouDrink].name : null,
     state.typeOfCoffee !== "" ? aspects[1].options[state.typeOfCoffee].name : null,
-    state.howMuch !== "" ? aspects[2].options[state.howMuch].name : null,
+    state.howMuch !== "" ? aspects[2].options[state.howMuch].name: null,
     state.grinded !== "" ? aspects[3].options[state.grinded].name : null,
     state.deliver !== "" ? aspects[4].options[state.deliver].name : null
   ]
@@ -166,15 +155,14 @@ function Plan() {
           {AllSteps}
       </div>
       {AllAspects}
+        {!orderSummary.includes(null) && 
+          <section className="summary">
+            <p>{`I drink my coffee as ${<span>{String(orderSummary[0])}s</span>}, with a ${orderSummary[1]} type of bean. ${orderSummary[2]} ground ala ${orderSummary[3]}, sent to me ${orderSummary[4]}.`}</p>
+          </section>}
 
-      {/* tutaj trzeba odwrócić !orderSummary */}
-      {!orderSummary.includes(null) && <p>{`I drink my coffee as ${orderSummary[0]}, with a ${orderSummary[1]} type of bean. ${orderSummary[2]} ground ala ${orderSummary[3]}, sent to me ${orderSummary[4]}.`}</p>}
-
-      <section className="summary">
-        {orderSummary.includes(null) && 
-        <p>{`I drink my coffee as ${<h1>{orderSummary[0]}</h1>}, with a ${<span>{orderSummary[1]}</span>} type of bean. ${<span>{orderSummary[2]}</span>} ground ala ${<span>{orderSummary[3]}</span>}, sent to me ${<span>{orderSummary[4]}</span>}.`}</p>}
-      </section>
-      <button onClick={()=> console.log(orderSummary)}>XD</button>
+      <Link to="/plan">
+        <button>Create your plan</button>
+      </Link>
     </PlanWrapper>
   );
 }
