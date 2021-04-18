@@ -70,9 +70,7 @@ const DropdownWrapper = styled.div`
             /* outline:2px solid red; */
             background-color:#F4F1EB;
             min-height:140px;
-            stroke: #979797;
             border-radius:5px;
-            border: 1px lightgrey solid;
         }
 
         h1 {

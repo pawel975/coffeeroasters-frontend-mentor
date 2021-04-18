@@ -6,13 +6,15 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import styled from "styled-components";
 import ScrollToTop from './ScrollToTop';
 import {CoffeeProvider} from '../Components/CoffeeRoasterContext'
+import {HamburgerProvider} from '../Components/CoffeeRoasterContext'
+import HamburgerMenu from '../Components/HamburgerMenu'
 
 
 const AppWrapper = styled.div`
     position:relative;
     width:100%;
     min-height:100vh;
-    background: #F2F2F2;
+    background: #FEFCF7;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -27,16 +29,19 @@ const AppWrapper = styled.div`
 `;
 
 function App() {
+
   return (
       <Router>
         <ScrollToTop/>
           <AppWrapper>
             <CoffeeProvider>
-              <div className="app">
-                <Nav/>
-                <Main/>
-                <Footer/>
-              </div>
+              <HamburgerProvider>
+                <div className="app">
+                  <Nav/>
+                  <Main/>
+                  <Footer/>
+                </div>
+              </HamburgerProvider>
             </CoffeeProvider>
           </AppWrapper>
       </Router>
