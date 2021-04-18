@@ -125,7 +125,7 @@ function Plan() {
 
 
   const orderSummary = [
-    state.howYouDrink !== "" ? aspects[0].options[state.howYouDrink].name : null,
+    state.typeOfCoffee !== "" ? aspects[0].options[state.typeOfCoffee].name : null,
     state.typeOfCoffee !== "" ? aspects[1].options[state.typeOfCoffee].name : null,
     state.howMuch !== "" ? aspects[2].options[state.howMuch].name: null,
     state.grinded !== "" ? aspects[3].options[state.grinded].name : null,
@@ -139,6 +139,8 @@ function Plan() {
   const AllAspects = aspects.map(aspect => (
     <Dropdown state={state} setState={setState} id={aspect.id} aspect={aspect}/>
   ))
+
+
 
   return (
     <PlanWrapper>
@@ -157,12 +159,15 @@ function Plan() {
       {AllAspects}
         {!orderSummary.includes(null) && 
           <section className="summary">
-            <p>{`I drink my coffee as ${<span>{String(orderSummary[0])}s</span>}, with a ${orderSummary[1]} type of bean. ${orderSummary[2]} ground ala ${orderSummary[3]}, sent to me ${orderSummary[4]}.`}</p>
+            <div className="summary-text">
+              <h1>ORDER SUMMARY</h1>
+              <p>"I drink my coffee as <span>{orderSummary[0]}</span>, with a   <span>      {orderSummary[1]}</span> type of bean. <span>{orderSummary[2]}</span>   ground ala <span>{orderSummary[3]}</span>, sent to me <span>{orderSummary[4]}</span>."
+              </p>
+            </div>
+            <Link to="/plan">
+              <button>Create my plan!</button>
+            </Link>
           </section>}
-
-      <Link to="/plan">
-        <button>Create your plan</button>
-      </Link>
     </PlanWrapper>
   );
 }

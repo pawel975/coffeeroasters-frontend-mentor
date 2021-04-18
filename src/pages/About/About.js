@@ -87,7 +87,8 @@ function About() {
       </div>
     </AboutWrapper>
 
-  );
+  )
+  ;
 }
 
 export default About;
