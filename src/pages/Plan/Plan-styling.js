@@ -160,7 +160,7 @@ export const PlanWrapper = styled.div`
         flex-direction:column;
         align-items:center;
         justify-content:center;
-        width:85%;
+        width:87%;
 
     .modal-summary-text {
         width:100%;

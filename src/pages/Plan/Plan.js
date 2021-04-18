@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { PlanWrapper } from './Plan-styling';
 import BlackCup from '../../assets/plan/mobile/image-hero-blackcup.jpg';
 import Step from '../../Components/Step/Step';
@@ -123,6 +123,7 @@ function Plan() {
   
   const [state, setState] = useContext(CoffeeContext)
 
+  const [modalActive, setModalActive] = useState(false)
 
   const orderSummary = [
     state.typeOfCoffee !== "" ? aspects[0].options[state.typeOfCoffee].name : null,
@@ -140,6 +141,9 @@ function Plan() {
     <Dropdown state={state} setState={setState} id={aspect.id} aspect={aspect}/>
   ))
 
+  const handleModalOpen = () => {
+    setModalActive(!modalActive)
+  }
 
 
   return (
@@ -165,10 +169,10 @@ function Plan() {
             </p>
           </div>
           <Link to="/plan">
-            <button>Create my plan!</button>
+            <button onClick={handleModalOpen}>Create my plan!</button>
           </Link>
         </section>}
-      <section className="modal-wrapper">
+      {modalActive && <section className="modal-wrapper">
         <div className="modal-background"></div>
         <section className="modal-summary">
             <div className="modal-summary-text">
@@ -179,10 +183,10 @@ function Plan() {
               </p>
               <p className="summary-confirm">Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. 
               </p>
-              <button>Checkout - $14.00 / mo</button>
+              <button onClick={handleModalOpen}>Checkout - $14.00 / mo</button>
             </div>
         </section>
-      </section>
+      </section> }
     </PlanWrapper>
   );
 }
