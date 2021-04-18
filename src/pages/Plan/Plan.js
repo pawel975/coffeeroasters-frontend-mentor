@@ -157,17 +157,32 @@ function Plan() {
           {AllSteps}
       </div>
       {AllAspects}
-        {!orderSummary.includes(null) && 
-          <section className="summary">
-            <div className="summary-text">
-              <h1>ORDER SUMMARY</h1>
-              <p>"I drink my coffee as <span>{orderSummary[0]}</span>, with a   <span>      {orderSummary[1]}</span> type of bean. <span>{orderSummary[2]}</span>   ground ala <span>{orderSummary[3]}</span>, sent to me <span>{orderSummary[4]}</span>."
+      {!orderSummary.includes(null) && 
+        <section className="summary">
+          <div className="summary-text">
+            <h1>ORDER SUMMARY</h1>
+            <p>"I drink my coffee as <span>{orderSummary[0]}</span>, with a   <span>      {orderSummary[1]}</span> type of bean. <span>{orderSummary[2]}</span>   ground ala <span>{orderSummary[3]}</span>, sent to me <span>{orderSummary[4]}</span>."
+            </p>
+          </div>
+          <Link to="/plan">
+            <button>Create my plan!</button>
+          </Link>
+        </section>}
+      <section className="modal-wrapper">
+        <div className="modal-background"></div>
+        <section className="modal-summary">
+            <div className="modal-summary-text">
+              <header>              
+                <h1>Order Summary</h1>
+              </header>
+              <p className="summary-description">"I drink my coffee as <span>{orderSummary[0]}</span>, with a <span> {orderSummary[1]}</span> type of bean. <span>{orderSummary[2]}</span>   ground ala <span>{orderSummary[3]}</span>, sent to me <span>{orderSummary[4]}</span>."
               </p>
+              <p className="summary-confirm">Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. 
+              </p>
+              <button>Checkout - $14.00 / mo</button>
             </div>
-            <Link to="/plan">
-              <button>Create my plan!</button>
-            </Link>
-          </section>}
+        </section>
+      </section>
     </PlanWrapper>
   );
 }

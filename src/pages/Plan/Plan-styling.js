@@ -123,6 +123,118 @@ export const PlanWrapper = styled.div`
         height:56px;
         border-radius:10px;
         }
+}
+
+.modal-wrapper {
+    margin:auto;
+    position:fixed;
+    transform:translate(-50%,0);
+    width:100vw;
+    top:0;
+    left:50%;
+    height:100%;
+
+    .modal-background {
+        margin:auto;
+        position:relative;
+        transform:translate(-50%,0);
+        width:100vw;
+        top:0;
+        left:50%;
+        height:100%;
+        background-color:black;
+        opacity:0.4;
     }
+
+    .modal-summary {
+        overflow:hidden;
+        border-radius:7px;
+        /* outline:3px solid red; */
+        position:fixed;
+        transform:translate(-50%,0);
+        top:15px;
+        left:50%;
+        background-color:white;
+        margin:auto;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        width:85%;
+
+    .modal-summary-text {
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:space-between;
+        background-color:#FEFCF7;
+        border-radius:7px;
+        padding-bottom:1.5em;
+        /* outline:2px solid purple; */
+
+        header {
+            width:100%;
+            background-color:#333D4B;
+            display:flex;
+            justify-content:flex-start;
+            align-items:center;
+            
+            h1 {
+            /* outline:2px solid green; */
+            margin: 1.2em 0.7em;
+            padding:0;
+            color:#FFFFFF;
+            font-size:28px;
+            line-height:32px;
+            font-family:"Fraunces", serif;
+            letter-spacing:0px;
+            font-weight:700;
+            }
+        }
+
+        .summary-description {
+            padding:1.5em 7.5% 0 7.5%;
+            margin:0;
+            color:#83888F;
+            font-size:24px;
+            line-height:40px;
+            font-family:"Fraunces", serif;
+            letter-spacing:0px;
+            font-weight:700;
+            /* outline:3px solid green; */
+            span {
+                color: #0E8784;
+            }
+        }
+
+        .summary-confirm {
+            margin:0;
+            padding:0 7.5%;
+            font-size:15px;
+            font-family:"Barlow", serif;
+            line-height:25px;
+            color: #333D4B;
+            font-weight:400;
+        }
+
+        button{
+            margin:auto;
+            margin-top:1em;
+            /* outline:2px solid green; */
+            border:none;
+            background-color: #0E8784;
+            color: #FEFCF7;
+            font-family: 'Fraunces', serif;
+            font-size:18px;
+            font-weight:900;
+            width:clamp(150px,85%,300px);
+            height:56px;
+            border-radius:10px;
+        }
+    }
+}
+}
+
 
 `
