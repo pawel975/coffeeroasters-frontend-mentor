@@ -63,7 +63,7 @@ const DropdownWrapper = styled.div`
 
         li {
             margin:auto;
-            width:auto;
+            width:clamp(150px,75%,400px);
             margin-bottom:1em;
             padding:0.5em 1.5em;
             color:#333D4B;

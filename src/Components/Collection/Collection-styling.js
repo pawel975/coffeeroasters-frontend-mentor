@@ -36,4 +36,27 @@ img{
         font-size:15px;
     }   
 
+@media (min-width:700px) {
+    width:80%;
+    flex-direction:row;
+    align-items:center;
+    img{
+        width:35%;
+
+    }
+    .description {
+        margin-left:2em;
+        width:70%;
+        align-items:flex-start;
+        }   
+        
+        h1 {
+        margin-bottom:0.8em;
+        }
+        p{
+            text-align:left;
+        }   
+
+}
+
 `

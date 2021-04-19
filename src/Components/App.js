@@ -7,7 +7,6 @@ import styled from "styled-components";
 import ScrollToTop from './ScrollToTop';
 import {CoffeeProvider} from '../Components/CoffeeRoasterContext'
 import {HamburgerProvider} from '../Components/CoffeeRoasterContext'
-import HamburgerMenu from '../Components/HamburgerMenu'
 
 
 const AppWrapper = styled.div`

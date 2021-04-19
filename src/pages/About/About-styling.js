@@ -182,4 +182,19 @@ export const AboutWrapper = styled.div`
         }
 
     }
+
+@media (min-width: 500px) {
+    .quality {
+        overflow:visible;
+        img {
+            top:-50px;
+        }
+
+        .background {
+            .description {
+                margin-bottom: 0em;
+            }
+        }
+    }
+}
 `

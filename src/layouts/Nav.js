@@ -20,24 +20,26 @@ const NavWrapper = styled.nav`
     }
 
     .nav-desktop {
-      display:flex;
-      ul{
-        display:flex;
-        li{
-          margin: 1em;
-        }
-      }
+      display:none;
     }
     .hamburger-menu {
-      display: none;
+      display: block;
     }
 
-    @media (max-width: 400px) {
+    @media (min-width: 700px) {
       .nav-desktop{
-        display:none;
+        display:flex;
+        ul{
+          display:flex;
+          list-style:none;
+        li{
+          margin: 1em;
+          text-decoration:none;
+        }
+      }
       }
       .hamburger-menu {
-      display: block;
+      display: none;
     }
     }
 ` 

@@ -6,7 +6,7 @@ export const FeatureWrapper = styled.div`
     align-items:center;
     justify-content:space-evenly;
     width:85%;
-    height:382px;
+    min-height:382px;
     margin-top: 2em;
     border-radius:7px;
     background: #0E8784;
@@ -45,4 +45,27 @@ export const FeatureWrapper = styled.div`
         }   
     }
 
+    @media (min-width:700px) {
+        padding: 2em 2em;
+        min-height:0;
+        width:80%;
+        flex-direction:row;
+        align-items:center;
+        img{
+            width:10%;
+        }
+        .description {
+            margin-left:2em;
+            width:70%;
+            align-items:flex-start;
+            min-height:0; 
+            
+            h1 {
+            margin-bottom:0.8em;
+            }
+            p{
+            text-align:left;
+            }   
+      }
+    }
 `
