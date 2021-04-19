@@ -131,7 +131,15 @@ function Home() {
       </div>
       <div className="steps">
           <h1 className="title">How it works</h1>
-          {AllSteps}
+          <div className="steps-path">
+            <div className="line"></div>
+            <div className="check-point"></div>
+            <div className="check-point"></div>
+            <div className="check-point"></div>
+          </div>
+          <div className="steps-container">
+            {AllSteps}
+          </div>
           <Link to="/plan">
             <button>Create your plan</button>
           </Link>

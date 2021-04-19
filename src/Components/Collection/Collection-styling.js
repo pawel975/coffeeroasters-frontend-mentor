@@ -42,7 +42,6 @@ img{
     align-items:center;
     img{
         width:35%;
-
     }
     .description {
         margin-left:2em;

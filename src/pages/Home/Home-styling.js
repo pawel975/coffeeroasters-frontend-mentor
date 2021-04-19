@@ -172,6 +172,11 @@ export const HomeWrapper = styled.div`
             font-family: "Fraunces", serif;
         }
 
+        
+        .steps-path {
+            display:none;
+        }
+
         button{
             margin-top:1em;
             border:none;
@@ -255,48 +260,14 @@ export const HomeWrapper = styled.div`
             }
 
             .text {
-            height:177px;
-            margin:auto;
-            margin-top:4em;
-            /* outline:2px solid red; */
-            display:flex;
-            flex-direction:column;
-            justify-content:space-between;
-            min-width:50px;
-            width:85%;
-            text-align:center;
-
                 h1{
-                font-size:28px;
-                font-family: "Fraunces", serif;
-                margin:0;
-                color:#FEFCF7;
-                /* outline:2px solid yellow; */
                 }
-
                 p{
-                font-size:15px;
-                font-family: "Barlow", serif;
-                margin:0;
-                line-height:25px;
-                color:#FEFCF7;
-                font-weight:100;
-                opacity:0.7;
-                /* outline: 2px solid purple; */
                 }
-
             }
         }
 
         .features {
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            width:100%;
-            position:absolute;
-            bottom:0;
-            /* outline:2px solid yellow; */
-            height:auto;
         }
     }
 
@@ -306,7 +277,7 @@ export const HomeWrapper = styled.div`
         margin-top: 6em;
         display:flex;
         flex-direction:column;
-        align-items:center;
+        align-items:flex-start;
 
         h1.title {
             width:100%;
@@ -315,6 +286,39 @@ export const HomeWrapper = styled.div`
             line-height:32px;
             color: #83888F;
             font-family: "Fraunces", serif;
+        }
+
+        .steps-path {
+            position:relative;
+            display:flex;
+            outline:2px solid black;
+            width:70%;
+            justify-content:space-between;
+
+            .line {
+                z-index:0;
+                transform:translate(-50%,-50%);
+                left:50%;
+                top:50%;
+                position:absolute;
+                border:1px solid #FDD6BA;
+                width:95%;
+                height:0px;
+
+            }
+
+            .check-point {
+                background-color:#FEFCF7;
+                z-index:1;
+                border: 2px solid #0E8784;
+                width:31px;
+                height:31px;
+                border-radius:50%;
+            }
+        }
+
+        .steps-container {
+            display:flex;
         }
 
         button{
