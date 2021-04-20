@@ -51,6 +51,25 @@ const FooterWrapper = styled.div`
         align-items: center;
         justify-content: space-between;
     }
+
+@media (min-width:700px) {
+    min-height: 270px;
+
+    .links-wrapper {
+        flex-direction:row;
+        min-height:0px;
+        margin: -1em 0 1em 0;
+        
+        .link {
+        }
+
+        li {
+            /* outline: 2px solid green; */
+            margin:0 1.5em;
+        }
+    }
+}
+
 `
 
 function Footer() {

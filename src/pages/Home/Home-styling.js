@@ -232,67 +232,31 @@ export const HomeWrapper = styled.div`
     }
 
     .benefits {
-        margin-top:6em;
-        /* outline:2px solid green; */
-        width:100%;
         min-height:885px;
-        display:flex;
-        position:relative;
-        flex-direction:column;
-        align-items:center;
 
         .intro {
-            border-radius:10px;
-            position:relative;
-            width:100%;
             height:600px;
-            background: #2C343E;
-            overflow:hidden;
 
             &:after{
-                content: "";
-                position:absolute;
-                background: #000;
-                opacity:0.2;
                 height:55%;
-                width:100%;
-                bottom:0;
             }
-
-            .text {
-                h1{
-                }
-                p{
-                }
-            }
-        }
-
-        .features {
         }
     }
 
     .steps {
         /* outline:2px solid red; */
-        width: 100%;
-        margin-top: 6em;
-        display:flex;
-        flex-direction:column;
         align-items:flex-start;
 
         h1.title {
-            width:100%;
-            text-align:center;
-            font-size:32px;
-            line-height:32px;
-            color: #83888F;
-            font-family: "Fraunces", serif;
+            text-align:left;
         }
 
         .steps-path {
+            margin:1em 0;
             position:relative;
             display:flex;
-            outline:2px solid black;
-            width:70%;
+            /* outline:2px solid black; */
+            width:72%;
             justify-content:space-between;
 
             .line {
@@ -319,19 +283,6 @@ export const HomeWrapper = styled.div`
 
         .steps-container {
             display:flex;
-        }
-
-        button{
-            margin-top:1em;
-            border:none;
-            background-color: #0E8784;
-            color: #FEFCF7;
-            font-family: 'Fraunces', serif;
-            font-size:18px;
-            font-weight:900;
-            width:217px;
-            height:56px;
-            border-radius:10px;
         }
     }
 

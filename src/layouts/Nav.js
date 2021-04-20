@@ -32,11 +32,18 @@ const NavWrapper = styled.nav`
         ul{
           display:flex;
           list-style:none;
-        li{
-          margin: 1em;
-          text-decoration:none;
+          
+          .navigation {
+            text-decoration:none;
+            margin-left:3em;
+            color:#83888F;
+            font-family:"Barlow", serif;
+            font-weight:700;
+            font-size:12px;
+            line-height:15px;
+            letter-spacing:0.92px;
+          }
         }
-      }
       }
       .hamburger-menu {
       display: none;
@@ -61,14 +68,14 @@ function Nav() {
           </div>
           <nav className="nav-desktop">      
            <ul>
-            <Link to="/">
-                <li>Home</li>
+            <Link className="navigation" to="/">
+                <li>HOME</li>
             </Link>
-            <Link to="/about">
-                <li>About</li>
+            <Link className="navigation" to="/about">
+                <li>ABOUT US</li>
             </Link>
-            <Link to="/plan">
-                <li>Create your plan</li>
+            <Link className="navigation" to="/plan">
+                <li>CREATE YOUR PLAN</li>
             </Link>
           </ul>
           </nav>
