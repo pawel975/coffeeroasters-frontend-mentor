@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import { PlanWrapper } from './Plan-styling';
-import BlackCup from '../../assets/plan/mobile/image-hero-blackcup.jpg';
+import BlackCupMobile from '../../assets/plan/mobile/image-hero-blackcup.jpg';
+import BlackCupTablet from '../../assets/plan/tablet/image-hero-blackcup.jpg';
 import Step from '../../Components/Step/Step';
 import Dropdown from '../../Components/Dropdown/Dropdown';
 import { CoffeeContext } from '../../Components/CoffeeRoasterContext';
@@ -149,7 +150,8 @@ function Plan() {
   return (
     <PlanWrapper>
       <div className="introduction">
-        <img className="background" src={BlackCup} alt="" />
+        <img className="background-introduction-mobile" src={BlackCupMobile} alt="" />
+        <img className="background-introduction-tablet" src={BlackCupTablet} alt="" />
         <div className="description">
           <h1>Create a plan</h1>
           <p>Build a subscription plan that best fits your needs. We offer an assortment of the best 
@@ -158,7 +160,15 @@ function Plan() {
         </div>
       </div>
       <div className="steps">
-          {AllSteps}
+      <div className="steps-path">
+            <div className="line"></div>
+            <div className="check-point"></div>
+            <div className="check-point"></div>
+            <div className="check-point"></div>
+          </div>
+          <div className="steps-container">
+            {AllSteps}
+          </div>
       </div>
       {AllAspects}
       {!orderSummary.includes(null) && 
@@ -183,7 +193,10 @@ function Plan() {
               </p>
               <p className="summary-confirm">Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. 
               </p>
-              <button onClick={handleModalOpen}>Checkout - $14.00 / mo</button>
+              <div className="checkout-container">
+                <label htmlFor="checkout">$14.00 / mo</label>
+                <button className="checkout" onClick={handleModalOpen}>Checkout - $14.00 / mo</button>
+              </div>
             </div>
         </section>
       </section> }

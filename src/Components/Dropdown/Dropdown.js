@@ -93,6 +93,65 @@ const DropdownWrapper = styled.div`
     .closed {
             display:none !important;
     }
+
+@media (min-width:700px) {
+    margin:auto;
+    width: 95%;
+    position:relative;
+    background-color:transparent;
+    height:auto;
+
+    .select {
+    }
+
+    .options {
+        /* outline:2px solid red; */
+        list-style:none;
+        margin:0;
+        padding:0;
+        margin-top:1em;
+        margin-bottom:2em;
+        width:100%;
+        background-color: transparent;
+        display:flex;
+        align-items:center;
+        flex-direction:row;
+        justify-content:space-between;
+
+        li {
+            height:100%;
+            margin:auto;
+            width:25%;
+            margin-bottom:1em;
+            padding:0.5em 1.5em;
+            color:#333D4B;
+            /* outline:2px solid red; */
+            background-color:#F4F1EB;
+            min-height:200px;
+            border-radius:5px;
+        }
+
+        h1 {
+            font-family:"Fraunces", serif;
+            font-size:24px;
+            line-height:32px;
+        }
+
+        p {
+            font-family:"Barlow", serif;
+            font-size:16px;
+            line-height:26px;
+        }
+
+        h1, p {
+            pointer-events:none
+        }
+    }
+
+    .closed {
+            display:none !important;
+    }
+}
 `
 
     const Dropdown = ({state, setState, id,aspect}) => {
