@@ -85,7 +85,9 @@ function About() {
       </div>
       <div className="quarters">
         <h1 className="title">Our headquarters</h1>
-        {AllQuarters}
+        <div className="quarters-wrapper">
+          {AllQuarters}
+        </div>
       </div>
     </AboutWrapper>
 

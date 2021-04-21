@@ -7,6 +7,7 @@ export const QuarterWrapper = styled.div`
     align-items:center;
     width:100%;
     min-height:262px;
+    margin:2.5em 0;
     justify-content: space-between;
     
     h1{
@@ -36,5 +37,26 @@ export const QuarterWrapper = styled.div`
             line-height:26px;
         }
     }
+
+@media (min-width: 700px) {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    width:100%;
+    min-height:262px;
+    margin:2.5em 0;
+    justify-content: space-between;
+
+    
+    h1{
+        padding-right:1em;
+    }
+
+    ul {
+        li {
+            text-align:left;
+        }
+    }
+}
     
 `
