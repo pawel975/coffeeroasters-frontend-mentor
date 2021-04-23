@@ -245,7 +245,15 @@ export const PlanWrapper = styled.div`
             margin:auto;
             display:flex;
             flex-direction:row;
-            outline:2px solid green;
+            /* outline:2px solid green; */
+
+            h1 {
+                margin-left:1em;
+                font-family: "Fraunces", serif;
+                color: #333D4B;
+                font-size:32px;
+                line-height:36px;
+            }
 
             button{
             margin:auto;
@@ -328,7 +336,7 @@ export const PlanWrapper = styled.div`
             margin:1em 0;
             position:relative;
             display:flex;
-            outline:2px solid black;
+            /* outline:2px solid black; */
             width:72%;
             justify-content:space-between;
 
@@ -507,9 +515,24 @@ export const PlanWrapper = styled.div`
             line-height:25px;
             color: #333D4B;
             font-weight:400;
-        }
 
-        button{
+            .checkout-container {
+            width:85%;
+            justify-content:space-between;
+            align-items:center;
+            margin:auto;
+            display:flex;
+            flex-direction:row;
+            outline:2px solid green;
+
+            h1 {
+                font-family: "Fraunces", serif;
+                color: #333D4B;
+                font-size:32px;
+                line-height:36px;
+            }
+
+            button{
             margin:auto;
             margin-top:1em;
             /* outline:2px solid green; */
@@ -519,9 +542,11 @@ export const PlanWrapper = styled.div`
             font-family: 'Fraunces', serif;
             font-size:18px;
             font-weight:900;
-            width:clamp(150px,85%,300px);
+            width:clamp(150px,85%,200px);
             height:56px;
             border-radius:10px;
+        }
+        }
         }
     }
 }

@@ -144,6 +144,7 @@ function Plan() {
 
   const handleModalOpen = () => {
     setModalActive(!modalActive)
+    console.log(window.innerWidth)
   }
 
 
@@ -194,8 +195,8 @@ function Plan() {
               <p className="summary-confirm">Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. 
               </p>
               <div className="checkout-container">
-                <label htmlFor="checkout">$14.00 / mo</label>
-                <button className="checkout" onClick={handleModalOpen}>Checkout - $14.00 / mo</button>
+                <h1>{window.innerWidth > 768 ? "$14.00 / mo":""}</h1>
+                <button onClick={handleModalOpen}>Checkout {window.innerWidth < 768? "- $14.00 / mo":"" }</button>
               </div>
             </div>
         </section>
