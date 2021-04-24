@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import { PlanWrapper } from './Plan-styling';
 import BlackCupMobile from '../../assets/plan/mobile/image-hero-blackcup.jpg';
 import BlackCupTablet from '../../assets/plan/tablet/image-hero-blackcup.jpg';
+import BlackCupDesktop from '../../assets/plan/desktop/image-hero-blackcup.jpg';
 import Step from '../../Components/Step/Step';
 import Dropdown from '../../Components/Dropdown/Dropdown';
 import { CoffeeContext } from '../../Components/CoffeeRoasterContext';
@@ -153,6 +154,7 @@ function Plan() {
       <div className="introduction">
         <img className="background-introduction-mobile" src={BlackCupMobile} alt="" />
         <img className="background-introduction-tablet" src={BlackCupTablet} alt="" />
+        <img className="background-introduction-desktop" src={BlackCupDesktop} alt="" />
         <div className="description">
           <h1>Create a plan</h1>
           <p>Build a subscription plan that best fits your needs. We offer an assortment of the best 
@@ -161,17 +163,24 @@ function Plan() {
         </div>
       </div>
       <div className="steps">
-      <div className="steps-path">
-            <div className="line"></div>
-            <div className="check-point"></div>
-            <div className="check-point"></div>
-            <div className="check-point"></div>
-          </div>
-          <div className="steps-container">
+        <div className="steps-path">
+          <div className="line"></div>
+          <div className="check-point"></div>
+          <div className="check-point"></div>
+          <div className="check-point"></div>
+        </div>
+        <div className="steps-container">
             {AllSteps}
-          </div>
+        </div>
       </div>
-      {AllAspects}
+      <div className="aspects-container">
+        <div className="aspects-container-nav">
+          {/* map aspektów */}
+        </div>
+        <div className="aspects-container-options">
+          {AllAspects}
+        </div>
+      </div>
       {!orderSummary.includes(null) && 
         <section className="summary">
           <div className="summary-text">
@@ -195,8 +204,8 @@ function Plan() {
               <p className="summary-confirm">Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. 
               </p>
               <div className="checkout-container">
-                <h1>{window.innerWidth > 768 ? "$14.00 / mo":""}</h1>
-                <button onClick={handleModalOpen}>Checkout {window.innerWidth < 768? "- $14.00 / mo":"" }</button>
+                <h1>{window.innerWidth > 700 ? "$14.00 / mo":""}</h1>
+                <button onClick={handleModalOpen}>Checkout {window.innerWidth < 700? "- $14.00 / mo":"" }</button>
               </div>
             </div>
         </section>

@@ -86,4 +86,41 @@ justify-content: space-between;
     }   
 }
 }
+
+@media (min-width: 1250px) {
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    width:100%;
+    margin:1em 0;
+    min-height:256px;
+    justify-content: center;
+    /* outline:2px solid green; */
+
+
+.description {
+    width:100%;
+    padding-right:1em;
+    min-height:0px;
+    align-items:flex-start;
+    justify-content:space-between;
+    /* outline:2px solid purple; */
+
+    h1{
+    text-align:left;
+    line-height:72px;
+    }
+
+    h2 {
+        margin:0.5em 0;
+        text-align:left;
+    }
+    p{
+        width:70%;
+        margin:0;
+        text-align:left;
+        min-height:0px;
+    }   
+}
+}
 `

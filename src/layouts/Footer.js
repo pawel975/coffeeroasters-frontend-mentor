@@ -70,6 +70,31 @@ const FooterWrapper = styled.div`
     }
 }
 
+@media (min-width:1250px) {
+    height:fit-content;
+    min-height:0px;
+    flex-direction:row;
+    /* outline: 2px solid green; */
+    img {
+        /* outline: 2px solid green; */
+    }
+    .links-wrapper {
+        flex-direction:row;
+        min-height:0px;
+        margin: 0;
+        padding:3em 0;
+        margin-right:7em;
+        /* outline: 2px solid green; */
+        .link {
+        }
+
+        li {
+            /* outline: 2px solid green; */
+            margin:0 1.5em;
+        }
+    }
+}
+
 `
 
 function Footer() {

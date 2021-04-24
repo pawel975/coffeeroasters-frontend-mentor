@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import CoffeePictureMobile from '../../assets/home/mobile/image-hero-coffeepress.jpg';
-import CoffeePictureTablet from '../../assets/home/tablet/image-hero-coffeepress.jpg'
+import CoffeePictureTablet from '../../assets/home/tablet/image-hero-coffeepress.jpg';
+import CoffeePictureDesktop from '../../assets/home/desktop/image-hero-coffeepress.jpg';
 import {HomeWrapper} from './Home-styling.js'
 import Collection from '../../Components/Collection/Collection';
 import GranEspresso from "../../assets/home/desktop/image-gran-espresso.png"
@@ -106,6 +107,7 @@ function Home() {
       <div className="introduction">
         <img className="background-mobile" src={CoffeePictureMobile} alt="" />
         <img className="background-tablet" src={CoffeePictureTablet} alt="" />
+        <img className="background-desktop" src={CoffeePictureDesktop} alt="" />
         <div className="description">
           <h1>Great coffee made simple.</h1>
           <p>Start your mornings with the world's best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
@@ -116,7 +118,9 @@ function Home() {
       </div>
       <div className="collection">
           <h1 className="title">our collection</h1>
-          {AllCoffees}
+          <div className="collection-container">
+            {AllCoffees}
+          </div>
       </div>
       <div className="benefits">
           <section className="intro">

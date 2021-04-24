@@ -56,6 +56,33 @@ img{
             text-align:left;
         }   
 
+@media (min-width:1250px) {
+    /* outline: 2px solid green; */
+    width:80%;
+    flex-direction:column;
+    align-items:center;
+    img{
+        width:60%;
+        margin-bottom:4em;
+        /* outline: 2px solid green; */
+    }
+    .description {
+        margin-left:0;
+        width:70%;
+        height:fit-content;
+        align-items: center;
+        }   
+        
+        h1 {
+            /* outline: 2px solid green; */
+        margin-bottom:0.8em;
+        }
+        p{
+            /* outline: 2px solid green; */
+            text-align:center;
+        }  
+} 
+
 }
 
 `

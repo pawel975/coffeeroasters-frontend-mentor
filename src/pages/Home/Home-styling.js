@@ -16,6 +16,9 @@ export const HomeWrapper = styled.div`
         .background-tablet {
             display:none;
         }
+        .background-desktop {
+            display:none;
+        }
         .description {
             width:80%;
             text-align:center;
@@ -79,11 +82,17 @@ export const HomeWrapper = styled.div`
             -webkit-text-fill-color: transparent;
             font-family: 'Fraunces', serif;
         }
+
+        .collection-container {
+            display:flex;
+            flex-direction:column;
+        }
+        
+        
     }
 
     .benefits {
         margin-top:6em;
-        /* outline:2px solid green; */
         width:100%;
         min-height:1500px;
         display:flex;
@@ -207,6 +216,12 @@ export const HomeWrapper = styled.div`
             width:100%;
             border-radius:10px;
         }
+
+        .background-desktop {
+            display:none;
+            width:100%;
+            border-radius:10px;
+        }
         .description {
             width:50%;
             left: 35%;
@@ -283,6 +298,156 @@ export const HomeWrapper = styled.div`
 
         .steps-container {
             display:flex;
+        }
+    }
+
+}
+@media (min-width: 1250px) {
+    display:flex;
+    flex-direction:column;
+    .introduction {
+        display:flex;
+        justify-content:flex-start;
+
+        .background-mobile {
+            display:none;
+            }
+
+        .background-tablet {
+            display:none;
+        }
+
+        .background-desktop {
+            display:initial;
+        }
+        .description {
+            width:40%;
+            left: 25%;
+            
+            h1{
+                font-size:72px;
+            }
+            
+            p{
+                font-size:16px;
+                line-height:26px;
+            }
+
+            button{
+            }
+        }
+    }
+    .collection {
+        h1.title{
+            font-size:150px;
+        }
+
+        .collection-container {
+            /* outline:2px solid green; */
+            display:flex;
+            flex-direction:row;
+        }
+    }
+
+    .benefits {
+        min-height:300px;
+        margin-bottom:15em;
+
+        .intro {
+            height:480px;
+
+            &:after{
+                height:55%;
+            }
+
+            .text {
+            height:auto;
+            margin:auto;
+            margin-top:4em;
+            /* outline:2px solid red; */
+            min-width:0;
+            width:45%;
+            text-align:center;
+
+                h1{
+                font-size:28px;
+                font-family: "Fraunces", serif;
+                margin:0;
+                color:#FEFCF7;
+                margin-bottom:1em;
+                /* outline:2px solid yellow; */
+                }
+
+                p{
+                font-size:15px;
+                font-family: "Barlow", serif;
+                margin:0;
+                line-height:25px;
+                color:#FEFCF7;
+                font-weight:100;
+                opacity:0.7;
+                /* outline: 2px solid purple; */
+                }
+
+            }
+        }
+
+        .features {
+            display:flex;
+            flex-direction:row;
+            transform:translate(-50%,-50%);
+            bottom:-70%;
+            left:50%;
+            width:82%;
+            align-items:center;
+            justify-content:space-between;
+            /* outline:2px solid red; */
+        }
+    }
+
+    .steps {
+        width:90%;
+        align-self:center;
+        /* outline:2px solid red; */
+        align-items:flex-start;
+
+        h1.title {
+            text-align:left;
+        }
+
+        .steps-path {
+            margin:1em 0;
+            position:relative;
+            display:flex;
+            /* outline:2px solid black; */
+            width:69%;
+            justify-content:space-between;
+
+            .line {
+                z-index:0;
+                transform:translate(-50%,-50%);
+                left:50%;
+                top:50%;
+                position:absolute;
+                border:1px solid #FDD6BA;
+                width:95%;
+                height:0px;
+
+            }
+
+            .check-point {
+                background-color:#FEFCF7;
+                z-index:1;
+                border: 2px solid #0E8784;
+                width:31px;
+                height:31px;
+                border-radius:50%;
+            }
+        }
+
+        .steps-container {
+            display:flex;
+            width:100%;
         }
     }
 

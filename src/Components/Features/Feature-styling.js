@@ -68,4 +68,33 @@ export const FeatureWrapper = styled.div`
             }   
       }
     }
+
+    @media (min-width:1250px) {
+        padding: 2em 0em;
+        min-height:270px;
+        width:30%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        img{
+            padding:1em;
+            width:20%;
+        }
+        .description {
+            margin-left:0em;
+            margin-top:1em;
+            width:70%;
+            align-items:center;
+            min-height:0; 
+            
+            h1 {
+            width:100%;
+            /* outline:2px solid green; */
+            margin-bottom:0.8em;
+            }
+            p{
+            text-align:center;
+            }   
+      }
+    }
 `
