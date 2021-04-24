@@ -29,7 +29,7 @@ const NavWrapper = styled.nav`
     @media (min-width: 700px) {
       .nav-desktop{
         display:flex;
-        ul{
+        div{
           display:flex;
           list-style:none;
           
@@ -67,17 +67,17 @@ function Nav() {
             <img src={hamburger} alt="" />
           </div>
           <nav className="nav-desktop">      
-           <ul>
+           <div>
             <Link className="navigation" to="/">
-                <li>HOME</li>
+                <span>HOME</span>
             </Link>
             <Link className="navigation" to="/about">
-                <li>ABOUT US</li>
+                <span>ABOUT US</span>
             </Link>
             <Link className="navigation" to="/plan">
-                <li>CREATE YOUR PLAN</li>
+                <span>CREATE YOUR PLAN</span>
             </Link>
-          </ul>
+          </div>
           </nav>
       </NavWrapper>
     </>
