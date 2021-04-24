@@ -152,6 +152,83 @@ const DropdownWrapper = styled.div`
             display:none !important;
     }
 }
+
+@media (min-width:1250px) {
+    margin:0;
+    margin-left:auto;
+    width: 100%;
+    position:relative;
+    background-color:transparent;
+    height:auto;
+    /* outline:2px solid red; */
+
+    .select {
+        margin:0px 0px;
+        width:100%;
+        
+        h3 {
+            flex-grow:1;
+            font-size:40px;
+            margin:0.5em 0;
+            margin-right:auto;
+            line-height:48px;
+            /* outline:2px solid red; */
+        }
+    }
+
+    .options {
+        /* outline:2px solid red; */
+        list-style:none;
+        margin:0;
+        padding:0;
+        margin-top:1em;
+        margin-bottom:2em;
+        width:100%;
+        background-color: transparent;
+        display:flex;
+        align-items:center;
+        flex-direction:row;
+        justify-content:space-between;
+
+        li {
+            height:100%;
+            margin:auto;
+            width:25%;
+            margin-bottom:1em;
+            padding:0.5em 1.5em;
+            color:#333D4B;
+            /* outline:2px solid red; */
+            background-color:#F4F1EB;
+            min-height:200px;
+            border-radius:5px;
+
+            &:hover{
+                background-color: #FDD6BA;
+                cursor: pointer;
+            }
+        }
+
+        h1 {
+            font-family:"Fraunces", serif;
+            font-size:24px;
+            line-height:32px;
+        }
+
+        p {
+            font-family:"Barlow", serif;
+            font-size:16px;
+            line-height:26px;
+        }
+
+        h1, p {
+            pointer-events:none
+        }
+    }
+
+    .closed {
+            display:none !important;
+    }
+}
 `
 
     const Dropdown = ({state, setState, id,aspect}) => {
@@ -223,9 +300,9 @@ const DropdownWrapper = styled.div`
         <DropdownWrapper id={id}>
              <div className="select">
                 <h3>{aspect.question}</h3>
-                <RiArrowDropDownLine 
+                <RiArrowDropDownLine  style={{cursor:"pointer"}}
                     className={`dash-icon ${open? "dash-active":"dash-inactive"}`} 
-                    size="60px" onClick={handleClickOpen}>Open
+                    size="60px" onClick={handleClickOpen}>
                 </RiArrowDropDownLine>
             </div>
                 <ul ref={initialStyling} className={`options ${open ? "":"closed"} `}>

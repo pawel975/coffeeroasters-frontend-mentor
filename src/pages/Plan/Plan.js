@@ -29,6 +29,7 @@ const steps = [
 const aspects = [
   {
     id: 0,
+    title: "Preferences",
     question:"How do you drink your coffee?",
     options: [
       {
@@ -47,6 +48,7 @@ const aspects = [
   },
   {
     id: 1,
+    title: "Bean Type",
     question:"What type of coffee?",
     options: [
       {
@@ -65,6 +67,7 @@ const aspects = [
   },
   {
     id: 2,
+    title: "Quantity",
     question:"How much would you like?",
     options: [
       {
@@ -83,6 +86,7 @@ const aspects = [
   },
   {
     id: 3,
+    title: "Grind Option",
     question:"Want us to grind them?",
     options: [
       {
@@ -101,6 +105,7 @@ const aspects = [
   },
   {
     id: 4,
+    title: "Deliveries",
     question:"How often should we deliver?",
     options: [
       {
@@ -121,18 +126,19 @@ const aspects = [
 
 
 function Plan() {
-  
-  
+
   const [state, setState] = useContext(CoffeeContext)
 
   const [modalActive, setModalActive] = useState(false)
 
+  const activeState = [state.howYouDrink,state.typeOfCoffee,state.howMuch,state.grinded, state.deliver]
+
   const orderSummary = [
-    state.typeOfCoffee !== "" ? aspects[0].options[state.typeOfCoffee].name : null,
-    state.typeOfCoffee !== "" ? aspects[1].options[state.typeOfCoffee].name : null,
-    state.howMuch !== "" ? aspects[2].options[state.howMuch].name: null,
-    state.grinded !== "" ? aspects[3].options[state.grinded].name : null,
-    state.deliver !== "" ? aspects[4].options[state.deliver].name : null
+    state.howYouDrink !== "" ? aspects[0].options[state.howYouDrink].name : "______",
+    state.typeOfCoffee !== "" ? aspects[1].options[state.typeOfCoffee].name : "______",
+    state.howMuch !== "" ? aspects[2].options[state.howMuch].name: "______",
+    state.grinded !== "" ? aspects[3].options[state.grinded].name : "______",
+    state.deliver !== "" ? aspects[4].options[state.deliver].name : "______"
   ]
 
   const AllSteps = steps.map(step => (
@@ -142,6 +148,16 @@ function Plan() {
   const AllAspects = aspects.map(aspect => (
     <Dropdown state={state} setState={setState} id={aspect.id} aspect={aspect}/>
   ))
+
+  const AscpectsList = aspects.map(item => (
+    <>
+      <li style={activeState[item.id] === "" ? {} : {opacity:0.3}}>
+        <span>{`0${item.id + 1}`}</span>
+        <h1>{item.title}</h1>
+      </li>
+      <hr/>
+    </>
+  ) )
 
   const handleModalOpen = () => {
     setModalActive(!modalActive)
@@ -174,14 +190,14 @@ function Plan() {
         </div>
       </div>
       <div className="aspects-container">
-        <div className="aspects-container-nav">
-          {/* map aspektów */}
-        </div>
+        <ul className="aspects-container-nav">
+          {AscpectsList}
+        </ul>
         <div className="aspects-container-options">
           {AllAspects}
         </div>
       </div>
-      {!orderSummary.includes(null) && 
+      {( window.innerWidth > 1250? true : !orderSummary.includes("______")) && 
         <section className="summary">
           <div className="summary-text">
             <h1>ORDER SUMMARY</h1>
