@@ -32,11 +32,11 @@ const FooterWrapper = styled.div`
         min-height:93px;
         
         .link {
-            text-decoration:none;
+            
         }
 
         
-        li {
+        span {
             /* outline: 2px solid green; */
             color:#83888F;
             font-weight:bold;
@@ -63,7 +63,7 @@ const FooterWrapper = styled.div`
         .link {
         }
 
-        li {
+        span {
             /* outline: 2px solid green; */
             margin:0 1.5em;
         }
@@ -88,7 +88,7 @@ const FooterWrapper = styled.div`
         .link {
         }
 
-        li {
+        span {
             /* outline: 2px solid green; */
             margin:0 1.5em;
         }
@@ -102,17 +102,17 @@ function Footer() {
       <>
         <FooterWrapper>
             <img src={logo} alt="" />   
-            <ul className="links-wrapper">
+            <div className="links-wrapper">
                 <Link className="link" to="/">
-                    <li>HOME</li>
+                    <span>HOME</span>
                 </Link>
                 <Link className="link" to="/about">
-                    <li>ABOUT US</li>
+                    <span>ABOUT US</span>
                 </Link>
                 <Link className="link" to="/plan">
-                    <li>CREATE YOUR PLAN</li>
+                    <span>CREATE YOUR PLAN</span>
                 </Link>
-            </ul>
+            </div>
             <div className="logos-wrapper">
                 <img src={facebook} alt="" />
                 <img src={twitter} alt="" />
